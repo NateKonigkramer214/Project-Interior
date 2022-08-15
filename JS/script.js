@@ -30,6 +30,27 @@ function changeMD()
 
 }
 
+//SR11
+function showbutton1()
+{
+	button1.style.visibility = "hidden";
+
+}
+
+function hidebutton1()
+{
+	button1.style.visibility = "visible";
+
+}
+
+function hideStaff1()
+{
+	var staff = document.getElementById("staff1");
+	staff.style.visibility = "hidden";
+}
+
+
+
 //.style.fontsize etc
 
 //Script to change font size color of the heading (Contact us page)
@@ -49,7 +70,7 @@ function changeheading()
 
 function alignright()
 {
-	var content_right = document.getElementByClass("RIGHT_HOVER");
+	var content_right = document.getElementByClassName("RIGHT_HOVER");
 
 	content_right.style.textAlign= "right";
 }
