@@ -1,9 +1,5 @@
 //Find all Elements for CEO to MD.
-
-
-function changeMD()
-
-{
+function changeMD(){
 	var CEO_HEADING = document.getElementById("CEO_H1");
 	var CEO_NAME = document.getElementById("CEO_NAME");
 	var CEO_IMAGE = document.getElementById("CEO_IMG");
@@ -28,51 +24,74 @@ function changeMD()
 	}
 };
 
-//SR11
-function showbutton1()
-{
-	button1.style.visibility = "visible";
-
-};
-
-function hidebutton1()
-{
-	button1.style.visibility = "hidden";
-
-};
-
-function hideStaff1()
-{
-	var staff = document.getElementById("staff1");
-	staff.style.visibility = "hidden";
-};
-
-
-
 //.style.fontsize etc
 
 //Script to change font size color of the heading (Contact us page)
-
-
-function changeheading()
-{
+function changeheading(){
 	var Change_heading = document.getElementById("CHANGE_H");
-
 	Change_heading.style.fontSize = "20px"
 	Change_heading.style.color = "#E4DCCF"
-
 }
-
-
 // Write a script to align the contact infomation to the right side.
 
 function alignright()
 {
 	var content_right = document.getElementByClassName("RIGHT_HOVER");
-
 	content_right.style.textAlign= "right";
 }
 
 //SQL if i have free time.
 //On click of send (contactus) store peoples questions in SQL DB.
 
+//Timer logic javascript. Use setInterval if time.
+    //Function to hide staff1 inforamtin such as image and description. 
+	//Needs to be implemented for each staff member. 
+	//Add show staff button. 
+    function hideStaff1(){
+		var staffhide1 = document.getElementById('staff1');
+		var button1remove = document.getElementById('button1');
+		staff1.style.visibility = "hidden";
+		button1remove.style.visibility = "hidden";
+	  }
+	  //button1 hide default 
+	  var button1_hide = document.getElementById('button1');
+		button1_hide.style.visibility = "hidden";
+
+	  //this functuon shows button after hover
+	  function button1show(){
+		var showbutton10s = document.getElementById('button1');
+		showbutton10s.style.visibility = "visible"; 
+	  }
+	  //hide button when mouseout
+	  function button1hide(){
+	  var showbutton10s = document.getElementById('button1');
+	  showbutton10s.style.visibility = "hidden"; 
+	  }
+
+//time start (will loop the function till cleartimeout();).
+	setInterval(button1_hide, milliseconds); //eg
+	//stop time loop 
+	clearTimeout();
+
+/* For staff 2 */
+function hideStaff2(){
+	var staffhide1 = document.getElementById('staff2');
+	var button1remove = document.getElementById('button2');
+	staff2.style.visibility = "hidden";
+	button2remove.style.visibility = "hidden";
+  }
+  //button2 hide default 
+  var button2_hide = document.getElementById('button2');
+	button2_hide.style.visibility = "hidden";
+
+  //this functuon shows button after hover
+  function button2show(){
+	var showbutton2 = document.getElementById('button2');
+	showbutton2.style.visibility = "visible"; 
+  }
+  //hide button when mouseout
+  function button2hide(){
+  var showbutton2 = document.getElementById('button2');
+  showbutton2.style.visibility = "hidden"; 
+  }
+//Can just name function eg. fucntion1(buttonhide);

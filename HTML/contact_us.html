@@ -73,26 +73,23 @@
 
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col" id="righthover" onmouseover="right()">
           <h1 id="CHANGE_H" class="display-3 text-center text-decoration-underline" onclick="changeheading()">Contact Us</h1>
           <p class="text-center w-responsive mx-auto mb-10" style="padding-top: 10px ;">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
             a matter of hours to help you.</p>
         </div>
       </div>
       <!--Info-->
-    <div class="RIGHT_HOVER" onmouseover="alignright()">
       <div class="text-center">
         <ul class=" list-group list-group-horizontal-md justify-content-center">
           <li class="list-group-item border-0">
             <i class="fas fa-map-marker-alt fa-2x"></i>
             <p>Auckland, New Zealand</p>
           </li>
-
           <li class="list-group-item border-0">
             <i class="fas fa-phone-alt fa-2x"></i>
             <p>+ 27 2599174</p>
           </li>
-
           <li class="list-group-item border-0">
             <i class="fas fa-envelope fa-2x"></i>
             <p>CaptivateInteriors@outlook.com</p>
@@ -103,7 +100,6 @@
           </li>
         </ul>
       </div>
-    </div>
 <!--Contact us form -->
   <!--Email-->
   <div class="form-group text-center">
@@ -131,8 +127,6 @@
 </div>
 </div>
 </section>
-
-
       <!--Footer-->
       <div class="container my-5">
 
@@ -156,25 +150,21 @@
             © 2020 Copyright:
             <a class="text-white" href="#">Captive Interiors</a>
           </div>
-          
         </footer>
       </div>
   <script>
     //Change the fontsize and font color of contact us heading. :D
-    function changeheading()
-      {
+    function changeheading(){
 	      var Change_heading = document.getElementById("CHANGE_H");
 	      Change_heading.style.fontSize = "60px";
 	      Change_heading.style.color = "#3FA796";
       }
       //Align right function. 
       //Needs work align right. 
-      function alignright()
-      {
-	      var content_right = document.getElementByClassName("RIGHT_HOVER");
-	      content_right.style.textAlign= "right";
-      } 
+      function right(){
+	      var content_right = document.getElementById("righthover");
+	      content_right.style.textAlign = "right";
+      }
     </script>
 </body>
-
 </html>
