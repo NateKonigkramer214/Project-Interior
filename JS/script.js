@@ -26,28 +26,26 @@ function changeMD()
 		CEO_PARA.innerHTML = "John Look , 26, has been the CEO for Captivate Interiors for 4 years. Look is responsible for managing a company's overall operations which include delegating and directing agendas, driving profitability, managing company organizational structure, strategy, and communicating with the board. He ensures Captivate Interiors runs at a profit and smoothly at all times. ";
 		CEO_BUTTON.innerHTML = "Change to MD";
 	}
-
-
-}
+};
 
 //SR11
 function showbutton1()
 {
-	button1.style.visibility = "hidden";
+	button1.style.visibility = "visible";
 
-}
+};
 
 function hidebutton1()
 {
-	button1.style.visibility = "visible";
+	button1.style.visibility = "hidden";
 
-}
+};
 
 function hideStaff1()
 {
 	var staff = document.getElementById("staff1");
 	staff.style.visibility = "hidden";
-}
+};
 
 
 

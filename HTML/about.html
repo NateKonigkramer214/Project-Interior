@@ -41,7 +41,7 @@
       <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <div class="class=" float-sm-start">
+            <div class=" float-sm-start">
               <img src="/HTML/images/logoedit.jpg" alt="Logo" width="150"
                 height="100">
             </div>
@@ -96,7 +96,7 @@
   <!--Head of Operations-->
   <section>
     <div class="container">
-      <div class="row">
+      <div class="row" id = "staff1" onmouseover="button1show()" onmouseout="button1hide()">
         <!--Image-->
         <div class="col">
           <h1 class="display-5 text-center pt-2">Nathan Peter</h1>
@@ -110,7 +110,7 @@
             Interiors for 2 years. Nathan implements the policies and procedures of day-to-day operations that take
             place in Captivate Interiors. Nathan also ensures work environments are adequate and safe. Nathan also
             oversees our departments and make sure they are meeting there goals.</p>
-            <button id="CEO_BTN" type="button" class="btn btn-dark" >Click Me!</button>
+            <button id="button1" type="button" class="btn btn-dark" onclick="hideStaff1()" mouseout="">Hide Staff!</button>
         </div>
       </div>
   </section>
@@ -200,12 +200,6 @@
         </div>
       </div>
   </section>
-
-
-
-
-
-
   <!--Footer-->
   <div class="container my-5">
 
@@ -259,15 +253,27 @@
         CEO_BUTTON.innerHTML = "MD";
       }
     }
-    function showbutton1()
-    {
-	    var show_button1 = document.getElementById("staffimage1");
-	    show_button1.style.visibility = "visable";
+    //Function to hide staff1 inforamtin such as image and description. 
+    function hideStaff1(){
+      var staffhide1 = document.getElementById('staff1');
+      var button1remove = document.getElementById('button1');
+      staff1.style.visibility = "hidden";
+      button1remove.style.visibility = "hidden";
+      
     }
-    function hidebutton1()
+    //button1 hide default 
+    var button1_hide = document.getElementById('button1');
+      button1_hide.style.visibility = "hidden";
+    //this functuon shows button after hover
+    function button1show()
     {
-	    var hide_button1 = document.getElementById("staffimage1")
-	    hide_button1.style.visibility = "hidden";
+      var showbutton10s = document.getElementById('button1');
+      showbutton10s.style.visibility = "visible"; 
+    }
+    //hide button when mouseout
+    function button1hide(){
+    var showbutton10s = document.getElementById('button1');
+    showbutton10s.style.visibility = "hidden"; 
     }
   </script>
 </body>
