@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +21,67 @@
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
   <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <style>
+  * {
+	box-sizing: border-box;
+  }
+button {
+	background-color: rebeccapurple;
+	border-radius: 5px;
+	box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.15);
+	border: none;
+	color: white;
+	cursor: pointer;
+	padding: 1rem 2rem;
+	position: relative;
+	transition: transform 0.1s linear, box-shadow 0.1s linear;
+	z-index: 10;
+}
+
+button:active {
+	transform: translate(4px, 4px);
+	box-shadow: 0 0 0 rebeccapurple;
+}
+
+button:focus {
+	outline: none;
+}
+
+.particle {
+	--x: 0;
+	--y: 0;
+	background-color: rebeccapurple;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 5px;
+	width: 5px;
+	z-index: -1;
+}
+
+.particle.move {
+	animation: move 1000ms linear forwards;
+}
+
+@keyframes move {
+	to {
+		transform: translate(var(--x), var(--y));
+	}
+	
+	95% {
+		opacity: 1;
+	}
+	
+	100% {
+		opacity: 0;
+	}
+}
+li {
+  transition: all 0.3s ease-in;
+}
+  </style>
 </head>
 
 <body>
@@ -47,7 +106,7 @@
             <span class="fs-4">Captivate Interiors</span>
           </a>
           <!--Navbar-->
-          <nav class="navbar navbar-expand navbar-light">
+          <nav class="navbar navbar-expand navbar-light col-lg-12" style="padding-left: 50px;">
             <ul class="nav navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link" href="/HTML/home.html">Home<span
@@ -68,64 +127,66 @@
         </header>
       </div>
     </header>
+<section class="mb-4">
+  <h2 class="h1-responsive font-weight-bold text-center my-4" id="CHANGE_H" onclick="changeheading()">Contact us</h2>
+  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Contact us bellow.</p>
 
-    <!--Contact us info-->
+  <div class="row">
+      <div class="col-md-9 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="md-form mb-0" style="padding-bottom: 20px ;">
+                          <input type="text" id="name" name="name" class="form-control" placeholder="Enter Full Name">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="email" name="email" class="form-control" placeholder="Enter email">
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0" style="padding-bottom: 20px ;">
+                          <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12" style="padding-bottom:20px;">
+                      <div class="md-form">
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="Message"></textarea>
+                      </div>
+                  </div>
+              </div>
+          </form>
+          <div class="text-center text-md-left">
+              <a class="btn btn-primary" id="btn">Send</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+      <!--Grid column-->
+      <div class="col-md-3 text-center">
+          <ul class="list-unstyled mb-0" id="navinfo">
+              <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                  <p>Auckland, New Zealand</p>
+              </li>
 
-    <div class="container">
-      <div class="row">
-        <div class="col" id="righthover" onmouseover="right()">
-          <h1 id="CHANGE_H" class="display-3 text-center text-decoration-underline" onclick="changeheading()">Contact Us</h1>
-          <p class="text-center w-responsive mx-auto mb-10" style="padding-top: 10px ;">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-            a matter of hours to help you.</p>
-        </div>
+              <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                  <p>+ 27 2599174</p>
+              </li>
+
+              <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                  <p>CaptivateInteriors@outlook.com</p>
+              </li>
+              <li><i class="fas fa-fax mt-4 fa-2x"></i>
+                <p>555-123-4567</p>
+              </li>
+          </ul>
       </div>
-      <!--Info-->
-      <div class="text-center">
-        <ul class=" list-group list-group-horizontal-md justify-content-center">
-          <li class="list-group-item border-0">
-            <i class="fas fa-map-marker-alt fa-2x"></i>
-            <p>Auckland, New Zealand</p>
-          </li>
-          <li class="list-group-item border-0">
-            <i class="fas fa-phone-alt fa-2x"></i>
-            <p>+ 27 2599174</p>
-          </li>
-          <li class="list-group-item border-0">
-            <i class="fas fa-envelope fa-2x"></i>
-            <p>CaptivateInteriors@outlook.com</p>
-          </li>
-          <li class="list-group-item border-0">
-            <i class="fas fa-fax fa-2x"></i>
-            <p>555-123-4567</p>
-          </li>
-        </ul>
-      </div>
-<!--Contact us form -->
-  <!--Email-->
-  <div class="form-group text-center">
-    <label class="font-weight-bold p-2">Full Name</label>
-    <input type="text" class="form-control " id="nameenter" placeholder="Enter Full Name">
-    <small id="namehelp" class="form-text text-muted text-light">We'll never share your full name with anyone!</small>
   </div>
-  <div class="form-group text-center">
-    <label class="font-weight-bold p-2">Email address</label>
-    <input type="email" class="form-control " id="email" placeholder="Enter email">
-    <small id="email" class="form-text text-muted text-light">We'll never share your email with anyone else!</small>
-  </div>
-  <div class="form-group text-center">
-    <label class="font-weight-bold p-2">Subject</label>
-    <input type="text" class="form-control " id="subject" placeholder="Subject">
-    <small id="subject" class="form-text text-muted text-light">This information will not be shared with anyone else but out staff!</small>
-  </div>
-  <div class="form-group text-center">
-    <label class="font-weight-bold p-2">Message</label>
-    <input type="text" class="form-control" id="message" placeholder="Message">
-    <small id="message" class="form-text text-muted text-light">This information will not be shared with anyone else but out staff!</small>
-  </div>
-  <div class="text-center text-md-left p-5">
-    <a class="btn btn-primary btn-lg">Send</a>
-</div>
-</div>
 </section>
       <!--Footer-->
       <div class="container my-5">
@@ -153,6 +214,12 @@
         </footer>
       </div>
   <script>
+    $('#navinfo li').hover(function() {
+
+      $(this).css('padding-left', '100px');
+    }, function() {
+      $(this).css('padding-left', '0');
+    })
     //Change the fontsize and font color of contact us heading. :D
     function changeheading(){
 	      var Change_heading = document.getElementById("CHANGE_H");
@@ -162,9 +229,54 @@
       //Align right function. 
       //Needs work align right. 
       function right(){
-	      var content_right = document.getElementById("righthover");
-	      content_right.style.textAlign = "right";
+        var right = document.getElementById("righthover");
+        right.style.textAlign = "right";
       }
-    </script>
+
+const btn = document.getElementById('btn');
+//fireworks
+btn.addEventListener('click', () => {
+	const particles = [];
+	const color = randomColor();
+	const particle = document.createElement('span');
+	particle.classList.add('particle', 'move');
+	const { x, y } = randomLocation();
+	particle.style.setProperty('--x', x);
+	particle.style.setProperty('--y', y);
+	particle.style.background = color;
+	btn.style.background = color;
+	btn.appendChild(particle)
+	particles.push(particle);
+	setTimeout(() => {
+		for(let i=0; i<100; i++) {
+			const innerP = document.createElement('span');
+			innerP.classList.add('particle', 'move');
+			innerP.style.transform = `translate(${x}, ${y})`;
+			const xs = Math.random() * 200 - 100 + 'px';
+			const ys = Math.random() * 200 - 100 + 'px';
+			innerP.style.setProperty('--x', `calc(${x} + ${xs})`);
+			innerP.style.setProperty('--y', `calc(${y} + ${ys})`);
+			innerP.style.animationDuration = Math.random() * 300 + 200 + 'ms';
+			innerP.style.background = color;
+			btn.appendChild(innerP);
+			particles.push(innerP)
+		}
+		setTimeout(() => {
+			particles.forEach(particle => {
+				particle.remove();
+			})
+		}, 1000)
+	}, 1000);
+});
+function randomLocation() {
+	return {
+		x: Math.random() * window.innerWidth - window.innerWidth / 2 + 'px',
+		y: Math.random() * window.innerHeight - window.innerHeight / 2 + 'px',
+	}
+}
+function randomColor() {
+	return `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
+}
+</script>
 </body>
 </html>
